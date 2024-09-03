@@ -29,7 +29,8 @@ public class Instructor {
 
     private String email;
 
-    @OneToOne(cascade = {CascadeType.ALL} )
     // @JoinColumn(name = "instructor_detail_id")
+    // @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL} )
     private InstructorDetail instructorDetail;
 }

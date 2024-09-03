@@ -27,9 +27,17 @@ public class RelationshipOOApplication {
 			// insertInstructor(appDao);
 
 			// Find Instructor
-			getInstructor(appDao);
+			// getInstructor(appDao);
+
+			// Delete Instructor
+			deleteInstructor(appDao);
 
 		};
+	}
+
+	private void deleteInstructor(AppDao appDao) {
+		
+		appDao.deleteInstructor(5);
 	}
 
 	private void getInstructor(AppDao appDao) {

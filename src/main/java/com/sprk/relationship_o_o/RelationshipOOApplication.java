@@ -30,42 +30,43 @@ public class RelationshipOOApplication {
 			// getInstructor(appDao);
 
 			// Delete Instructor
-			deleteInstructor(appDao);
+			// deleteInstructor(appDao);
 
 		};
 	}
-
-	private void deleteInstructor(AppDao appDao) {
+ 
+// 	private void deleteInstructor(AppDao appDao) {
 		
-		appDao.deleteInstructor(5);
-	}
+// 		appDao.deleteInstructor(5);
+// 	}
 
-	private void getInstructor(AppDao appDao) {
+// 	private void getInstructor(AppDao appDao) {
 
-		Instructor  instructor = appDao.findByInstructorId(2);
+// 		Instructor  instructor = appDao.findByInstructorId(2);
 
-		System.out.println(instructor);
+// 		System.out.println(instructor);
 
-		System.out.println(instructor.getInstructorDetail());
+// 		System.out.println(instructor.getInstructorDetail());
 		
-	}
+// 	}
 
-	private void insertInstructor(AppDao appDao) {
+// 	private void insertInstructor(AppDao appDao) {
 
-		Instructor instructor = new Instructor(0, "Yuvraj", "Gawde", "yuvraj@gmail.com", null);
+// 		Instructor instructor = new Instructor(0, "Yuvraj", "Gawde", "yuvraj@gmail.com", null);
 
-		InstructorDetail instructorDetail = new InstructorDetail(0, "ME", "Singing",
-				new Timestamp(System.currentTimeMillis()));
+// 		InstructorDetail instructorDetail = new InstructorDetail(0, "ME", "Singing",
+// 				new Timestamp(System.currentTimeMillis()));
 
-		/*
-		 * InstructorDetail instructorDetail = new InstructorDetail(0, "BE", "Cycling",
-		 * Timestamp.from(Instant.now()));
-		 */
+// 		/*
+// 		 * InstructorDetail instructorDetail = new InstructorDetail(0, "BE", "Cycling",
+// 		 * Timestamp.from(Instant.now()));
+// 		 */
 
-		instructor.setInstructorDetail(instructorDetail);
+// 		instructor.setInstructorDetail(instructorDetail);
 
-		appDao.saveInstructor(instructor);
+// 		appDao.saveInstructor(instructor);
 
-	}
+// }
 
 }
+

@@ -17,16 +17,16 @@ public class AppDaoImpl implements AppDao {
     @Override
     @Transactional
     public void saveInstructor(Instructor instructor) {
-      
 
         // entityManager.persist(instructor.getInstructorDetail());
-        
+
         entityManager.persist(instructor);
     }
 
     @Override
     public Instructor findByInstructorId(int id) {
-        return entityManager.find(Instructor.class, id);
+        Instructor instructor = entityManager.find(Instructor.class, id);
+        return instructor;
     }
 
     @Override

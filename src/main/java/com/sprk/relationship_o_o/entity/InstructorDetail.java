@@ -3,6 +3,9 @@ package com.sprk.relationship_o_o.entity;
 import java.sql.Timestamp;
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +22,7 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "instructor")
 public class InstructorDetail {
 
     @Id
@@ -33,7 +36,9 @@ public class InstructorDetail {
     @Column(columnDefinition = "Timestamp default current_timestamp")
     private Timestamp joiningDate;
 
+    // Bi directional
     @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    @JsonBackReference
     private Instructor instructor;
 
 }

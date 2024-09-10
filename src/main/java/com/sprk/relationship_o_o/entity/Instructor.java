@@ -1,5 +1,7 @@
 package com.sprk.relationship_o_o.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +18,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "instructorDetail")
 public class Instructor {
 
     @Id
@@ -31,6 +33,8 @@ public class Instructor {
 
     // @JoinColumn(name = "instructor_detail_id")
     // @OneToOne
-    @OneToOne(cascade = {CascadeType.ALL} )
+    @OneToOne(cascade = { CascadeType.ALL })
+    @JsonManagedReference
     private InstructorDetail instructorDetail;
+
 }
